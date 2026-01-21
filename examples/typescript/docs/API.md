@@ -313,7 +313,7 @@ enum TransactionDetails {
   "jsonrpc": "2.0",
   "id": 1,
   "result": {
-    "transactions": Transaction[],
+    "data": Transaction[],
     "paginationToken": string | null
   }
 }

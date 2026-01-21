@@ -132,7 +132,7 @@ The `searchTransactions` method accepts the following parameters:
   "jsonrpc": "2.0",
   "id": 1,
   "result": {
-    "transactions": [...],
+    "data": [...],
     "paginationToken": "394941095:1232" // null if no more pages
   }
 }
