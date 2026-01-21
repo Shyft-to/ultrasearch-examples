@@ -8,14 +8,14 @@
 
 ## 📖 Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Examples](#examples)
-- [API Reference](#api-reference)
-- [Contributing](#contributing)
-- [Support](#support)
-- [License](#license)
+- [About](#-about)
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Examples](#-examples)
+- [API Reference](#-api-reference)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [License](#-license)
 
 ## 🎯 About
 
