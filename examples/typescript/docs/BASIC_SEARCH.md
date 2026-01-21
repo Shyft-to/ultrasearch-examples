@@ -95,7 +95,11 @@ When `params` is empty or not provided:
 
 - `signature` (string): Transaction signature (unique identifier)
 - `slot` (number): Slot number where transaction was processed
+- `transactionIndex` (number): Transaction index at particular slot
+- `err` (object): Transaction error if failed, otherwise null
+- `memo` (string): Transaction memo if any, otherwise null
 - `blockTime` (number): Unix timestamp of the block
+- `confirmationStatus` (string): Solana transaction commitment 
 
 **Pagination Token:**
 

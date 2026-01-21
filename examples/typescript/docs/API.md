@@ -324,8 +324,12 @@ enum TransactionDetails {
 ```typescript
 {
   "signature": "5J8...",
-  "slot": 394941095,
-  "blockTime": 1704067200
+  "slot": 393898476,
+  "transactionIndex": 7,
+  "err": null,
+  "memo": null,
+  "blockTime": 1768573429,
+  "confirmationStatus": "finalized"
 }
 ```
 
@@ -333,9 +337,9 @@ enum TransactionDetails {
 
 ```typescript
 {
-  "signature": "5J8...",
-  "slot": 394941095,
   "blockTime": 1704067200,
+  "slot": 394941095,
+  "transactionIndex": 7,
   "transaction": {
     "message": {
       "accountKeys": [...],
@@ -352,7 +356,8 @@ enum TransactionDetails {
     "logMessages": [...],
     "preTokenBalances": [...],
     "postTokenBalances": [...]
-  }
+  },
+  "version": 0
 }
 ```
 
