@@ -1,0 +1,54 @@
+{
+  "name": "@ultrasearch/typescript-examples",
+  "version": "0.0.1",
+  "description": "TypeScript examples for UltraSearch RPC API - Search and filter Solana blockchain transactions",
+  "keywords": [
+    "solana",
+    "blockchain",
+    "rpc",
+    "ultrasearch",
+    "transactions",
+    "typescript",
+    "web3",
+    "defi",
+    "crypto"
+  ],
+  "author": "Shyft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shyft-to/ultrasearch-examples.git",
+    "directory": "examples/typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/Shyft-to/ultrasearch-examples/issues"
+  },
+  "homepage": "https://github.com/Shyft-to/ultrasearch-examples#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "docs",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "npx ts-node src/index.ts",
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean"
+  },
+  "dependencies": {
+    "axios": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "prettier": "^3.8.0",
+    "typescript": "^5.9.3",
+    "ts-node": "^10.9.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
