@@ -86,7 +86,7 @@ export interface SearchParams {
   failed?: boolean;
 
   /**
-   * Sort order (default: ASC)
+   * Sort order (default: DESC)
    */
   sort?: SortOrder;
 

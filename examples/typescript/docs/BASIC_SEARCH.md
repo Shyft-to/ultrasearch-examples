@@ -67,7 +67,7 @@ When `params` is empty or not provided:
 |-----------|-------|------|
 | `transactionDetails` | `"signatures"` | Default: only signatures |
 | `limit` | `1000` | Default maximum |
-| `sort` | `"ASC"` | Default: oldest first |
+| `sort` | `"DESC"` | Default: newest first |
 
 ## Response Format
 
@@ -210,7 +210,7 @@ params: {
 import { SortOrder } from "./types/search-transactions-req";
 
 params: {
-  sort: SortOrder.DESC  // Newest first (default is ASC)
+  sort: SortOrder.DESC  // Newest first (default is DESC)
 }
 ```
 

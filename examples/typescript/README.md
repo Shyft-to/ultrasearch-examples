@@ -142,7 +142,7 @@ enum TransactionDetails {
 // Sorting options
 enum SortOrder {
   ASC = "ASC",   // Ascending by slot (oldest first)
-  DESC = "DESC"  // Descending by slot (newest first)
+  DESC = "DESC"  // Descending by slot (newest first, default)
 }
 
 // Search parameters

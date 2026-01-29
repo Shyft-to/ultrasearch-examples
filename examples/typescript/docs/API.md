@@ -205,7 +205,7 @@ Filter failed transactions.
 
 **Type:** `"ASC" | "DESC"`  
 **Optional:** Yes  
-**Default:** `"ASC"`
+**Default:** `"DESC"`
 
 Sort order based on slot number (block number).
 
