@@ -120,7 +120,7 @@ The `searchTransactions` method accepts the following parameters:
 | `toBlock` | `number` | Ending block number (inclusive) | Latest blocks |
 | `vote` | `boolean` | Include/exclude vote transactions | `undefined` |
 | `failed` | `boolean` | Include/exclude failed transactions | `undefined` |
-| `sort` | `"ASC" \| "DESC"` | Sort order by slot number | `"ASC"` |
+| `sort` | `"ASC" \| "DESC"` | Sort order by slot number | `"DESC"` |
 | `limit` | `number` | Maximum results per request | `1000` (signatures), `100` (full) |
 | `paginationToken` | `string` | Token for fetching next page | `undefined` |
 | `transactionDetails` | `"signatures" \| "full"` | Level of detail in response | `"signatures"` |
