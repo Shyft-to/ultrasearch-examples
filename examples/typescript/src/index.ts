@@ -293,7 +293,7 @@ async function fetchAllTransactionsWithPagination() {
         fromBlock: 394940000,
         toBlock: 394940500, // Small range for demo
         limit: 100, // Signatures mode allows up to 1000
-        paginationToken, // Add token from previous response
+        // paginationToken, // Add token from previous response
       },
     };
 

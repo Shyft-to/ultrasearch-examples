@@ -116,8 +116,8 @@ The `searchTransactions` method accepts the following parameters:
 | `accountInclude` | `string[]` | Include transactions involving any of these accounts | `undefined` |
 | `accountExclude` | `string[]` | Exclude transactions involving these accounts | `undefined` |
 | `accountRequired` | `string[]` | Only include transactions with ALL these accounts | `undefined` |
-| `fromBlock` | `number` | Starting block number (inclusive) | Latest blocks |
-| `toBlock` | `number` | Ending block number (inclusive) | Latest blocks |
+| `fromBlock` | `number` | Starting block number (inclusive). **Must be paired with `toBlock`** — providing only one is an error. When both are omitted a default 5000-block window is used. | See note |
+| `toBlock` | `number` | Ending block number (inclusive). **Must be paired with `fromBlock`** — providing only one is an error. When both are omitted a default 5000-block window is used. | See note |
 | `vote` | `boolean` | Include/exclude vote transactions | `undefined` |
 | `failed` | `boolean` | Include/exclude failed transactions | `undefined` |
 | `sort` | `"ASC" \| "DESC"` | Sort order by slot number | `"DESC"` |
@@ -137,6 +137,13 @@ The `searchTransactions` method accepts the following parameters:
   }
 }
 ```
+
+**Block range default behavior** (when `fromBlock`/`toBlock` are both omitted):
+
+| Condition | `sort: "DESC"` (default) | `sort: "ASC"` |
+|---|---|---|
+| No `paginationToken` | Last 5000 blocks | First indexed block → +5000 |
+| With `paginationToken` | `paginationToken` slot − 5000 → slot | `paginationToken` slot → slot + 5000 |
 
 **[View Full API Documentation →](examples/typescript/docs/API.md)**
 

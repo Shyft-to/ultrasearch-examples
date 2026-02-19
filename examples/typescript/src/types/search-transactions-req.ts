@@ -58,13 +58,25 @@ export interface SearchParams {
   accountRequired?: string[];
 
   /**
-   * Starting block number (inclusive)
+   * Starting block number (inclusive).
+   * Must be provided together with `toBlock` — specifying only one is an error.
+   *
+   * Default block range when omitted (together with `toBlock`):
+   * - `sort: "DESC"` (default) → last 5000 blocks
+   * - `sort: "ASC"` → first indexed block to first indexed block + 5000
+   *
    * @example 394940000
    */
   fromBlock?: number;
 
   /**
-   * Ending block number (inclusive)
+   * Ending block number (inclusive).
+   * Must be provided together with `fromBlock` — specifying only one is an error.
+   *
+   * Default block range when omitted (together with `fromBlock`):
+   * - `sort: "DESC"` (default) → last 5000 blocks
+   * - `sort: "ASC"` → first indexed block to first indexed block + 5000
+   *
    * @example 394941496
    */
   toBlock?: number;
