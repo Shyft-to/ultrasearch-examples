@@ -125,6 +125,12 @@ async function fetchAllTransactions() {
 - Tokens may expire after extended periods
 - Always check if token is `null` before requesting next page
 
+### Block Range and Pagination Interaction
+
+See [Block Range Rules](BLOCK_RANGE.md) for pairing requirements and how the default window shifts with each `paginationToken`.
+
+> For consistent multi-page results over a known history, always specify an explicit `fromBlock`/`toBlock` range and keep it the same across all pages.
+
 ## Advanced Patterns
 
 ### 1. Progress Tracking

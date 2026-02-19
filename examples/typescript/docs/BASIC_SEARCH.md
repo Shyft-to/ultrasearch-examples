@@ -68,6 +68,11 @@ When `params` is empty or not provided:
 | `transactionDetails` | `"signatures"` | Default: only signatures |
 | `limit` | `1000` | Default maximum |
 | `sort` | `"DESC"` | Default: newest first |
+| `fromBlock` / `toBlock` | *(omitted)* | Defaults to last 5000 blocks (DESC) |
+
+### Block Range Rules
+
+See [Block Range Rules](BLOCK_RANGE.md) for pairing requirements and default window behavior.
 
 ## Response Format
 

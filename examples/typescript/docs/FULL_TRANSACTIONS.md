@@ -347,6 +347,10 @@ async function parseDEXSwap() {
 | **Response Size** | ~250-350 KB | Per transaction (varies) |
 | **Performance** | Slower | Compared to signatures mode |
 
+### Block Range Rules
+
+See [Block Range Rules](BLOCK_RANGE.md) for pairing requirements and default window behavior.
+
 ### Performance Comparison
 
 ```typescript

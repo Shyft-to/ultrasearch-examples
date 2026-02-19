@@ -150,8 +150,8 @@ interface SearchParams {
   accountInclude?: string[];      // Include txs with ANY of these accounts
   accountExclude?: string[];      // Exclude txs with these accounts
   accountRequired?: string[];     // Only txs with ALL these accounts
-  fromBlock?: number;             // Start block (inclusive)
-  toBlock?: number;               // End block (inclusive)
+  fromBlock?: number;             // Start block (inclusive) — must pair with toBlock
+  toBlock?: number;               // End block (inclusive) — must pair with fromBlock
   vote?: boolean;                 // Filter vote transactions
   failed?: boolean;               // Include/exclude failed txs
   sort?: SortOrder;               // Sort order
@@ -219,6 +219,12 @@ const results = await Promise.all(promises);
 2. **Optimize Block Ranges**
    - Keep block ranges reasonable (avoid very large ranges)
    - Use specific ranges when possible
+   - `fromBlock` and `toBlock` must **both** be specified or **both** omitted — providing only one is an error
+   - When both are omitted the API defaults to a 5000-block window:
+     - **No `paginationToken`, `DESC`** → last 5000 blocks
+     - **No `paginationToken`, `ASC`** → first indexed block → +5000
+     - **With `paginationToken`, `DESC`** → `paginationToken` slot − 5000 → slot
+     - **With `paginationToken`, `ASC`** → `paginationToken` slot → slot + 5000
 
 3. **Handle Pagination**
    - Always check for `paginationToken` in responses

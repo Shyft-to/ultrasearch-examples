@@ -46,7 +46,9 @@ interface SearchTransactionsRpcRequest {
 
 ## Parameters
 
-All parameters are optional. An empty `params` object returns the latest 1000 transaction signatures.
+All parameters are optional. An empty `params` object returns the latest 1000 transaction signatures from the last 5000 blocks (DESC order).
+
+> **Block range rule:** `fromBlock` and `toBlock` must always be provided **together**. Specifying only one of them is an error. When both are omitted, a default 5000-block window is applied automatically — see [Block Range Rules](BLOCK_RANGE.md) for exact bounds.
 
 ### `accountInclude`
 
@@ -122,35 +124,36 @@ Only include transactions where **all** specified accounts are involved.
 
 ### `fromBlock`
 
-**Type:** `number`  
-**Optional:** Yes  
-**Default:** Recent blocks
+**Type:** `number`
+**Optional:** Yes (but must be paired with `toBlock`)
 
 Starting block number (inclusive) for the search range.
 
 ```typescript
 {
-  fromBlock: 394940000
+  fromBlock: 394940000,
+  toBlock: 394941496
 }
 ```
 
 **Notes:**
 - Block numbers are Solana slot numbers
 - Inclusive range (includes the specified block)
-- Use with `toBlock` for historical queries
+- **Must always be specified together with `toBlock`** — providing only one of the two is an error
+- When both are omitted the API applies a default 5000-block window whose bounds depend on `sort` and `paginationToken` (see [Block Range Rules](BLOCK_RANGE.md#default-block-range))
 
 ---
 
 ### `toBlock`
 
-**Type:** `number`  
-**Optional:** Yes  
-**Default:** Recent blocks
+**Type:** `number`
+**Optional:** Yes (but must be paired with `fromBlock`)
 
 Ending block number (inclusive) for the search range.
 
 ```typescript
 {
+  fromBlock: 394940000,
   toBlock: 394941496
 }
 ```
@@ -158,6 +161,12 @@ Ending block number (inclusive) for the search range.
 **Notes:**
 - Must be greater than or equal to `fromBlock`
 - Inclusive range (includes the specified block)
+- **Must always be specified together with `fromBlock`** — providing only one of the two is an error
+- When both are omitted the API applies a default 5000-block window whose bounds depend on `sort` and `paginationToken` (see [Block Range Rules](BLOCK_RANGE.md#default-block-range))
+
+---
+
+> **Block Range Rules** — See [BLOCK_RANGE.md](BLOCK_RANGE.md) for the full rules on pairing requirements and default window behavior.
 
 ---
 
